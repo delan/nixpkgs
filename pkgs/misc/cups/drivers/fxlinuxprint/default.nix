@@ -18,14 +18,16 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ dpkg autoPatchelfHook ];
   buildInputs = [ cups ];
 
-  buildPhase = ":";  # nothing to build
+  sourceRoot = ".";
+  unpackCmd = "dpkg-deb -x $curSrc/fxlinuxprint_${version}_${debPlatform}.deb .";
+
+  dontConfigure = true;
+  dontBuild = true;
 
   installPhase = ''
     mkdir -p $out
-    dpkg -x $src/fxlinuxprint_${version}_${debPlatform}.deb $out
-
-    mv $out/usr/* $out
-    rmdir $out/usr
+    mv etc $out
+    mv usr/* $out
 
     mkdir -p $out/share/cups/model
     mv $out/share/ppd/FujiXerox/* $out/share/cups/model
