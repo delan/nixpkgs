@@ -23900,6 +23900,7 @@ in
   brlaser = callPackage ../misc/cups/drivers/brlaser { };
 
   fxlinuxprint = callPackage ../misc/cups/drivers/fxlinuxprint { };
+  fxlinuxprintutil = callPackage ../misc/cups/drivers/fxlinuxprintutil { };
 
   brscan4 = callPackage ../applications/graphics/sane/backends/brscan4 { };
 
