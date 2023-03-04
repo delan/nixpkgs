@@ -20,8 +20,8 @@ let
   fileHash = {
     aarch64-darwin = "sha256-INZEL78JusTjTHaK0LugfQlA+HRfkpLE/LhJUU++Hsc=";
     x86_64-darwin = "sha256-INZEL78JusTjTHaK0LugfQlA+HRfkpLE/LhJUU++Hsc=";
-    aarch64-linux = "sha256-xJQcqNV/Pr3gEGStczc3gv8AYrEKFsAo2g4WtA59fwk=";
-    x86_64-linux = "sha256-xJQcqNV/Pr3gEGStczc3gv8AYrEKFsAo2g4WtA59fwk=";
+    aarch64-linux = "sha256-0c74bGOY9f2K52xE7CZy/i3OfyCC+a6XGI30c6hI7jM=";
+    x86_64-linux = "sha256-0c74bGOY9f2K52xE7CZy/i3OfyCC+a6XGI30c6hI7jM=";
   }.${stdenv.system};
 
   linux = appimageTools.wrapType2 rec {
@@ -46,7 +46,7 @@ let
       '';
   };
 
-  darwin = stdenv.mkDerivation {
+  darwin = stdenv.mkDerivation rec {
     inherit name pname version meta;
 
     src = fetchzip {
@@ -77,6 +77,7 @@ let
     ];
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
     maintainers = with maintainers; [ delan stepbrobd ];
+    mainProgram = "osu!";
     platforms = [ "aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux" ];
   };
 in
