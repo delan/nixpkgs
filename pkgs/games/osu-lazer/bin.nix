@@ -19,7 +19,7 @@ let
 
   fileHash = {
     aarch64-darwin = "sha256-INZEL78JusTjTHaK0LugfQlA+HRfkpLE/LhJUU++Hsc=";
-    x86_64-darwin = "sha256-INZEL78JusTjTHaK0LugfQlA+HRfkpLE/LhJUU++Hsc=";
+    x86_64-darwin = "sha256-eM0aIxbxKgbNiWfKwP70UeFJHi1GN6uu58NoL57p6hU";
     aarch64-linux = "sha256-0c74bGOY9f2K52xE7CZy/i3OfyCC+a6XGI30c6hI7jM=";
     x86_64-linux = "sha256-0c74bGOY9f2K52xE7CZy/i3OfyCC+a6XGI30c6hI7jM=";
   }.${stdenv.system};
