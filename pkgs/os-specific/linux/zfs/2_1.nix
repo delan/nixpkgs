@@ -27,9 +27,9 @@ callPackage ./generic.nix args {
 
   # This is a fixed version to the 2.1.x series, move only
   # if the 2.1.x series moves.
-  version = "2.1.12";
+  version = "2.1.9";
 
-  hash = "sha256-eYUR5d4gpTrlFu6j1uL83DWL9uPGgAUDRdSEb73V5i4=";
+  hash = "sha256-RT2ijcXhdw5rbz1niDjrqg6G/uOjyrJiTlS4qijiWqc=";
 
   tests = [
     nixosTests.zfs.series_2_1
